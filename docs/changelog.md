@@ -1,7 +1,14 @@
 Change Log
 ===
 
-#v0.14.0 **2016 July 20**
+#v0.14.5
+**2016 July 20**
+
+1. remove action and store instance
+2. use redux instead flux store
+
+#v0.14.0
+**2016 July 20**
 
 Now react-router was upgrade to version 2.6.0
 

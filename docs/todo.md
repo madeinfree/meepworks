@@ -2,7 +2,7 @@ Todo List
 =========
 
 Priority
-* [ ] 嘗試將 flux 轉換為 redux
+* [x] 嘗試將 flux 轉換為 redux
 
 Other
 * [ ] 寫完整的 Documentation
