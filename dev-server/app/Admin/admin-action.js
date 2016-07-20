@@ -1,4 +1,10 @@
-import { Action } from '../../../source'
+import {
+  ADD_USER
+} from './admin-const'
 
-export class FetchUser extends Action {}
-export class CreateUser extends Action {}
+export const addUser = (user) => (
+  {
+    type: ADD_USER,
+    payload: user
+  }
+)

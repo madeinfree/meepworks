@@ -1,12 +1,15 @@
 import React from 'react'
 import { Component } from '../../../source'
 
+import { connect } from 'react-redux'
+
 import {
-  FetchUser,
-  CreateUser
+  addUser
 } from './admin-action'
 
-export default class AdminView extends Component {
+import { fromJS } from 'immutable'
+
+class AdminView extends Component {
 
   constructor() {
     super()
@@ -23,11 +26,11 @@ export default class AdminView extends Component {
   }
 
   _onGetUser() {
-    this.runAction(new FetchUser)
+    console.log(this.props.users)
   }
 
   _onCreateUser() {
-    this.runAction(new CreateUser)
+    this.props.addUser(fromJS({ name: 'whien', gender: 'boy' }))
   }
 
   render() {
@@ -42,3 +45,18 @@ export default class AdminView extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => (
+  {
+    users: state.users
+  }
+)
+
+const mapActionToProps = {
+  addUser
+}
+
+export default connect(
+  mapStateToProps,
+  mapActionToProps
+)(AdminView)
